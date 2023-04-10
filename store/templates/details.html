@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+
+    <style>
+        form{
+
+        padding:35px;
+        width:100%;
+        height:500px;
+        background-image:url('https://i0.wp.com/www.differencebetween.com/wp-content/uploads/2011/08/Difference-Between-School-and-Education_Education.jpg');
+        background-size: 1600px 900px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+        }
+    input{padding:10px;
+    margin-bottom: 10px;}
+
+
+    </style>
+</head>
+<body>
+<div> <form method="post" action="details">
+    {% csrf_token %}
+    <h1 style="color:maroon;font-family:algerian;">Fill Up The Details..</h1>
+    <input type="text" name="name" placeholder="Enter your name"><br>
+    <input type="date" name="dob" placeholder="Enter your data of birth"><br>
+    <input type="number" name="Age" placeholder="Enter your Age"><br>
+    <input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female<br>
+    <input type="number" name="number" placeholder="Enter your Mob Number"><br>
+    <input type="email" name="email" placeholder="Enter your email id"><br>
+    <input type="text" name="address" placeholder="Enter your Address"><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var subjectObject = {
+  "Health Science": {
+    "MLT": ["Regular", "Distance"],
+    "Physiotherapy": ["Regular", "Distance"],
+    "Pharmacy": ["Regular", "Distance"]
+  },
+  "Humanities & Social Sciences": {
+    "English": ["Regular", "Distance"],
+    "Economics": ["Regular", "Distance"],
+  },
+  "Basic Sciences": {
+    "Physics":["Regular", "Distance"],
+    "Chemistry": ["Regular", "Distance"],
+    "Mathematics":["Regular", "Distance"],
+  },
+  "Science & Technology": {
+    "Computer Science": ["Regular", "Distance"],
+    "BCA": ["Regular", "Distance"],
+    "MCA": ["Regular", "Distance"],
+  },
+  "Commerce and Management": {
+    "Commerce": ["Regular", "Distance"],
+    "Bussiness Administration": ["Regular", "Distance"],
+    "Hotel Management":["Regular", "Distance"],
+  },
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+ //empty Chapters- and Topics- dropdowns
+ chapterSel.length = 1;
+topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+ //empty Chapters dropdown
+chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+Department: <select name="subject" id="subject">
+    <option value="" selected="selected">Select subject</option>
+  </select>
+  <br><br>
+Courses: <select name="topic" id="topic">
+    <option value="" selected="selected">Please select subject first</option>
+  </select>
+  <br><br>
+Stream: <select name="chapter" id="chapter">-->
+    <option value="" selected="selected">Please select the Stream</option>
+ </select>
+ <br><br>
+            </div>
+        </div>
+    </div>
+<br>
+    <select style="margin: 10px;">
+<option selected disabled="true">PURPOSE</option>
+  <option value="Enquiry">Enquiry</option>
+  <option value="Place Order">Place Order</option>
+  <option value="return">Return</option>
+
+</select><br>
+
+ <h2><u>MATERIALS:</u></h2><input type="checkbox" id="m1" name="m1" value="book"  >
+<label for="m1">  BOOK</label><br>
+<input type="checkbox" id="m2" name="m2" value="pen">
+<label for="m2"> PEN</label><br>
+<input type="checkbox" id="m3" name="m3" value="paper">
+<label for="m3"> PAPER</label><br>
+
+
+    <input type="submit">
+
+  {% for msg in messages %}
+  <h2>{{msg}}</h2>
+{% endfor %}
+
+    <div id="Logout">
+    <a href="login" id="LogoutAction" type="" style="padding:10px;">LOGOUT</a>
+    </div>
+    <a href="/" style="padding:10px;">Back To Home</a>
+</form>
+    </div>
+
+</body>
+
+</html>
